@@ -11,7 +11,7 @@ function Home() {
   useEffect(() => {
     const fetchCompanies = async () => {
       try {
-        const response = await fetch('https://enterprisehub.onrender.com//api/v1/getCompany');
+        const response = await fetch('https://enterprisehub.onrender.com/api/v1/getCompany');
 
         // Check for valid JSON response before parsing
         if (!response.ok || !response.headers.get('Content-Type').startsWith('application/json')) {
@@ -31,7 +31,7 @@ function Home() {
 
   const handleCompanyCreate = async (newCompany) => {
     try {
-      const response = await fetch('https://enterprisehub.onrender.com//api/v1/createCompany', {
+      const response = await fetch('https://enterprisehub.onrender.com/api/v1/createCompany', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newCompany),
@@ -54,7 +54,7 @@ function Home() {
 
   const handleCompanyUpdate = async (updatedCompany) => {
     try {
-      const response = await fetch(`https://enterprisehub.onrender.com//api/v1/updateCompany/${updatedCompany._id}`, {
+      const response = await fetch(`https://enterprisehub.onrender.com/api/v1/updateCompany/${updatedCompany._id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(updatedCompany),
@@ -81,7 +81,7 @@ function Home() {
 
   const handleCompanyDelete = async (companyId) => {
     try {
-      const response = await fetch(`https://enterprisehub.onrender.com//api/v1/deleteCompany/${companyId}`, {
+      const response = await fetch(`https://enterprisehub.onrender.com/api/v1/deleteCompany/${companyId}`, {
         method: 'DELETE',
       });
 
