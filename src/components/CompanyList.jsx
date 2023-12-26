@@ -1,6 +1,7 @@
 import React from 'react';
 import { CiEdit } from 'react-icons/ci';
 import { MdDelete } from 'react-icons/md';
+import './LoadingAnimation.css'; 
 
 function CompanyList({ companies, onUpdate, onDelete }) {
   return (
@@ -11,8 +12,8 @@ function CompanyList({ companies, onUpdate, onDelete }) {
         <thead>
           <tr className="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
             <th className="py-3 px-6 text-left">Name</th>
-            <th className="py-3 px-6 text-left">Location</th>
-            <th className="py-3 px-6 text-center">Actions</th>
+            <th className="py-3 px-6 text-center">Location</th>
+            <th className="py-3 px-6 text-right">Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -23,8 +24,8 @@ function CompanyList({ companies, onUpdate, onDelete }) {
               return (
                 <tr key={_id} className="border-b border-gray-200 hover:bg-gray-100">
                   <td className="py-3 px-6 text-left">{name}</td>
-                  <td className="py-3 px-6 text-left">{location}</td>
-                  <td className="py-3 px-6 text-center">
+                  <td className="py-3 px-6 text-center">{location}</td>
+                  <td className="py-3 px-6 text-right">
                     <button
                       className="text-2xl text-black px-4 py-2 rounded font-bold hover:text-green-700"
                       onClick={() => onUpdate(company)}
@@ -44,7 +45,15 @@ function CompanyList({ companies, onUpdate, onDelete }) {
           ) : (
             <tr>
               <td colSpan={3} className="text-center py-4">
-                No Companies To Show.
+                <div className="loading-container">
+                  <div className="loading-spinner">
+                    <div className="loading-circle loading-circle-1"></div>
+                    <div className="loading-circle loading-circle-2"></div>
+                    <div className="loading-circle loading-circle-3"></div>
+                    <div className="loading-circle loading-circle-4"></div>
+                  </div>
+                  <div className="loading-text">Loading...</div>
+                </div>
               </td>
             </tr>
           )}
