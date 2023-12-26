@@ -11,9 +11,9 @@ function CompanyList({ companies, onUpdate, onDelete }) {
         {/* Ensure table width adapts */}
         <thead>
           <tr className="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
-            <th className="py-3 px-6 text-left">Name</th>
+            <th className="py-3 px-6 text-center">Name</th>
             <th className="py-3 px-6 text-center">Location</th>
-            <th className="py-3 px-6 text-right">Actions</th>
+            <th className="py-3 px-6 text-center">Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -23,9 +23,9 @@ function CompanyList({ companies, onUpdate, onDelete }) {
 
               return (
                 <tr key={_id} className="border-b border-gray-200 hover:bg-gray-100">
-                  <td className="py-3 px-6 text-left">{name}</td>
+                  <td className="py-3 px-6 text-center">{name}</td>
                   <td className="py-3 px-6 text-center">{location}</td>
-                  <td className="py-3 px-6 text-right">
+                  <td className="py-3 px-6 text-center">
                     <button
                       className="text-2xl text-black px-4 py-2 rounded font-bold hover:text-green-700"
                       onClick={() => onUpdate(company)}
